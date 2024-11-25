@@ -12,16 +12,23 @@ count = 0;
 %can get repeat numbers now so deck can't change
 
 for i = 1:n
+    %set up for one run of the game
     hand = [];
     num_hand = num;
     num_deck = num;
     run_count= [];
+
+    %adds 5 available random numbers to the hand.
     for z = 1:5 
         add = randi(length(num_hand));
         add_to_hand = num_hand(add);
         hand = [hand,add_to_hand];
         num_hand(add)=[]; 
     end
+
+    %checks everyday if a random "bingo ball" is in the player's deck.
+    %if the hand is empty, the game ends.
+    %no balls are removed from the "deck"
     for d = 1:m
         test = randi(length(num_deck));
         check = num_deck(test);
@@ -42,6 +49,7 @@ for i = 1:n
     end
 end
 
+%Cumulative frequency data generation.
 for i = 1:length(tally)
     add2 = sum(tally(1:i));
     cum_freq = [cum_freq,add2];    
@@ -55,6 +63,7 @@ y_axis = tally;
 plot(x_axis,y_axis,'k')
 %'linewidth',2
 
+%graph plotting (can change parts depending on data you want to generate)
 title(["Plot of days taken to win Bingo Lottery", "(Including repeat numbers)"],'FontName','times');
 xlabel("Number of days since start");
 ylabel("Frequency (" + n + " simulations)")
