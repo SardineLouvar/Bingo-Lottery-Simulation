@@ -14,3 +14,6 @@ No repeats:
 
 With repeats:
 ![Percentage plot with repeats](https://github.com/user-attachments/assets/eca63045-7a89-469a-b0d1-49d7eaf2e17c)
+
+
+As you can see, the "no repeats" game allows for short term games (1-2 months approx), whereas the "with repeats" game would be better for 1-2 year runs.
